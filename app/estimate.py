@@ -1,5 +1,8 @@
 from sagemaker.sklearn.estimator import SKLearn
 
 estimator = SKLearn(
-    entry_point="train.py"
+    entry_point="train.py",
+    instance_type="local"
 )
+
+estimator.fit()
