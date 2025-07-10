@@ -4,3 +4,4 @@ services:
     tty: true
     volumes:
       - .:/usr/src/app
+      - .sagemaker:/root/.sagemaker
