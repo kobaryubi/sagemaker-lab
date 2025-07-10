@@ -1,1 +1,2 @@
 sagemaker[local]
+python-dotenv
