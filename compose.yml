@@ -1,0 +1,6 @@
+services:
+  python:
+    build: .
+    tty: true
+    volumes:
+      - .:/usr/src/app
