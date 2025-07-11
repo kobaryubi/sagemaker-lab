@@ -1,15 +1,11 @@
-import boto3
 from sagemaker.sklearn.estimator import SKLearn
 from sagemaker.local import LocalSession
-from dotenv import load_dotenv
 
-load_dotenv()
-
-boto_session = boto3.Session(region_name="ap-northeast-1")
-sagemaker_session = LocalSession(boto_session=boto_session)
+sagemaker_session = LocalSession()
+sagemaker_session.config = {"local": {"local_code": True}}
 
 estimator = SKLearn(
-    entry_point="train.py",
+    entry_point="./app/train.py",
     # ml.t3.medium, ml.m4.xlarge
     instance_type="local",
     framework_version="1.2-1",
@@ -18,4 +14,6 @@ estimator = SKLearn(
     role="lab-sagemaker-execution-role"
 )
 
-estimator.fit()
+estimator.fit({
+    "train": "file://data/train",
+})
