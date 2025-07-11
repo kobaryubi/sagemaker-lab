@@ -14,6 +14,11 @@ RUN echo \
 RUN apt update
 RUN apt install -y docker-ce-cli 
 
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+RUN rm -rf aws*
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt .
