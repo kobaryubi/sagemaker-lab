@@ -1,3 +1,7 @@
 sagemaker[local]
 python-dotenv
 boto3
+pandas
+numpy
+scikit-learn
+joblib
