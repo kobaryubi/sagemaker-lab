@@ -1,6 +1,9 @@
 import boto3
 from sagemaker.sklearn.estimator import SKLearn
 from sagemaker.local import LocalSession
+from dotenv import load_dotenv
+
+load_dotenv()
 
 boto_session = boto3.Session(region_name="ap-northeast-1")
 sagemaker_session = LocalSession(boto_session=boto_session)
@@ -12,6 +15,7 @@ estimator = SKLearn(
     framework_version="1.2-1",
     hyperparameters={},
     sagemaker_session=sagemaker_session,
+    role="lab-sagemaker-execution-role"
 )
 
 estimator.fit()
