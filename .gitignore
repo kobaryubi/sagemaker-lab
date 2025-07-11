@@ -1,2 +1,7 @@
 venv/
-**/*.joblib
+*.joblib
+build
+*.egg-info
+MANIFEST.in
+setup.cfg
+setup.py
