@@ -8,7 +8,8 @@ source ./venv/bin/activate
 pip3 install --no-cache-dir -r requirements.txt
 ```
 
+## Local
+
 ```sh
-python app/train.py
-python app/estimate.py
+python3 local/estimate.py
 ```
