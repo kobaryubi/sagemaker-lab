@@ -1,8 +1,0 @@
-services:
-  python:
-    build: .
-    tty: true
-    volumes:
-      - .:/usr/src/app
-      - .sagemaker:/root/.sagemaker
-      - ~/.aws:/root/.aws:ro
